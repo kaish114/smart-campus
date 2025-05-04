@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # MongoDB Service
+  mongodb:
+    image: mongo:5.0
+    container_name: sc-mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: smart-campus
+    networks:
+      - smart-campus-network
+
+  # Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../docker/backend/Dockerfile
+    container_name: sc-backend
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+      - MONGO_URI=mongodb://mongodb:27017/smart-campus
+      - JWT_SECRET=your_jwt_secret_key_here  # Change in production
+      - JWT_EXPIRE=30d
+      - CLIENT_URL=http://localhost
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev
+    networks:
+      - smart-campus-network
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/frontend/Dockerfile
+    container_name: sc-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - smart-campus-network
+
+networks:
+  smart-campus-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
