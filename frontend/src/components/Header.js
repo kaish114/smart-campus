@@ -102,7 +102,7 @@ const Header = ({ toggleDrawer }) => {
               flexGrow: 1
             }}
           >
-            SMART CAMPUS
+            IIITU SMART CAMPUS
           </Typography>
           
           <Box sx={{ display: 'flex', alignItems: 'center' }}>

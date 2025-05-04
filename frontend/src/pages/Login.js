@@ -81,7 +81,7 @@ const Login = () => {
             <Box sx={{ mb: 4, textAlign: 'center' }}>
               <SchoolIcon fontSize="large" color="primary" sx={{ fontSize: 56 }} />
               <Typography component="h1" variant="h4" fontWeight="bold" color="primary" sx={{ mt: 1 }}>
-                Smart Campus
+                IIITU Smart Campus
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
                 Resource Management System

@@ -152,7 +152,7 @@ const Register = () => {
             <Box sx={{ mb: 4, textAlign: 'center' }}>
               <SchoolIcon fontSize="large" color="primary" sx={{ fontSize: 56 }} />
               <Typography component="h1" variant="h4" fontWeight="bold" color="primary" sx={{ mt: 1 }}>
-                Join Smart Campus
+                Join IIITU Smart Campus
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
                 Create your account to start booking campus resources
