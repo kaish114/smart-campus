@@ -402,5 +402,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74038190/226190894-18e959ba-d458-4a94-ac44-790190f2a947.gif" width="500">
-  <p>Made with ❤️ by the Smart Campus Team</p>
+  <p>Made with ❤️ by The Engineer Guy</p>
 </div>
